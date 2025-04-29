@@ -8,7 +8,7 @@ M = M
 @R5
 M = M
 
-// Compute (NOT R0) AND R1 then store in R3
+// Compute NOT R0 AND R1 then store in R3
 @R0
 D = M
 D = !D
@@ -17,7 +17,7 @@ D = D & M
 @R3
 M = D
 
-// Compute R0 AND (NOT R1) then store in R4
+// Compute R0 AND NOT R1 then store in R4
 @R5
 D = M
 D = !D
