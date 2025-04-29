@@ -61,13 +61,13 @@ M = 0
 // Minimum Value
 (CANNOT_COMPUTE)
 @R3
-M = 1        // Status = error
+M = 1
 
 @R0
 D = M
 
 @R1
-M = D        // Store original value in R1 anyway
+M = D
 
 @END
 0; JMP
