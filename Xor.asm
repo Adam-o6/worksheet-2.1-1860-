@@ -26,7 +26,7 @@ D = D & M
 @R4
 M = D
 
-// Now compute R3 OR R4 to final XOR
+// Compute R3 OR R4 to final XOR
 @R3
 D = M
 @R4
