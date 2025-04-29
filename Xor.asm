@@ -1,47 +1,37 @@
-// Load R0 into D
+// Save original R0 into D
 @R0
 D = M
 
-// Store original R0 in R3
+// Save original R1 into R5
+@R1
+M = M
+@R5
+M = M
+
+// Compute (NOT R0) AND R1 then store in R3
+@R0
+D = M
+D = !D
+@R1
+D = D & M
 @R3
 M = D
 
-// Load R1 into D
-@R1
+// Compute R0 AND (NOT R1) then store in R4
+@R5
 D = M
-
-// Compute NOT R1 into R4
+D = !D
+@R0
+D = D & M
 @R4
-M = !D
+M = D
 
-// Load R3 into D
+// Now compute R3 OR R4 to final XOR
 @R3
 D = M
-
-// R5 = R0 AND NOT R1
-@R5
-M = D & M
-
-// Compute NOT R0 into D
-@R3
-D = M
-@R6
-M = !D
-
-// Load R1 into D again
-@R1
-D = M
-
-// R7 = NOT R0 AND R1
-@R7
-M = D & M
-
-// XOR
-@R5
-D = M
-@R7
+@R4
 D = D | M
 
-// Store final result in R2
+// Store the XOR result in R2
 @R2
 M = D
